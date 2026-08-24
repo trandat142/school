@@ -33,6 +33,13 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn L
   - [Bài 08](offline/buoi-01/Bai08Fibonacci.java)
   - [Bài 09](offline/buoi-01/Bai09ChuoiNhiPhan.java)
   - [Bài 10](offline/buoi-01/Bai10DemTanSuat.java)
+- [Buổi 02](offline/buoi-02)
+  - [Notes](offline/buoi-02/notes.md)
+  - [Bài 06-07](offline/buoi-02/Bai06Bai07MangVaSapXep.java)
+  - [Bài 08](offline/buoi-02/Bai08Fibonacci.java)
+  - [Bài 09](offline/buoi-02/Bai09ChuoiNhiPhan.java)
+  - [Bài 10](offline/buoi-02/Bai10DemTanSuat.java)
+  - [Bài 11](offline/buoi-02/Bai11TimKiemThemXoa.java)
 
 ## Quy ước của môn
 
