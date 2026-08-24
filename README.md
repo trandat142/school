@@ -6,6 +6,7 @@ Repo lưu tài liệu, ghi chú và source code các môn học.
 
 - [Phát triển hệ thống tích hợp](phat-trien-he-thong-tich-hop)
 - [Lập trình trong CNTT với Java](lap-trinh-trong-cntt-voi-java)
+- [Phát triển ứng dụng WEB](phat-trien-ung-dung-web)
 
 ## Quy ước chung
 
