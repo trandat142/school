@@ -1,44 +1,34 @@
 # Buổi 02 - Kiến trúc phần mềm và Java cơ bản
 
-## 1. Tổng quan buổi học
+## Action items
 
-Buổi học gồm 2 phần chính:
+- [ ] Hoàn thành bài thực hành: gõ lại chương trình demo Java, thêm biến, dùng `System.in`, dùng vòng lặp `while`.
+- [ ] Chụp màn hình đầy đủ gồm code và kết quả chạy để gửi giảng viên.
+- [ ] Tự nghiên cứu lớp `Scanner` để dùng trong buổi sau.
 
-- Kiến trúc phần mềm
-- Nhắc lại Java cơ bản
-
-Nội dung Java trong buổi này dùng để chuẩn bị cho các bài lập trình mạng sau này, đặc biệt là TCP và UDP.
-
----
-
-## 2. Action items
-
-- [ ] Gõ lại chương trình demo Java.
-- [ ] Thêm biến vào chương trình.
-- [ ] Sử dụng `System.in` để nhập ký tự.
-- [ ] Dùng vòng lặp `while`, không dùng `do-while`.
-- [ ] Chụp màn hình đầy đủ gồm code và kết quả chạy.
-- [ ] Test đủ các trường hợp: nhập `K`, nhập `Q`, nhập ký tự khác.
-- [ ] Tự nghiên cứu lớp `Scanner` để chuẩn bị cho buổi sau.
+> Ghi chú: các việc như mời bạn vào nhóm Zalo không đưa vào notes học tập vì không liên quan đến nội dung môn học.
 
 ---
 
-## 3. Kiến trúc phần mềm
+## 1. Kiến trúc phần mềm
 
-Một ứng dụng thường có các phần chức năng chính:
+Một ứng dụng thường có các phần chính:
 
 - Giao diện
-- Xử lý nghiệp vụ
+- Xử lý nghiệp vụ, còn gọi là business logic
 - Truy vấn hoặc lưu trữ dữ liệu
 
-Trong đó:
+Có thể hiểu đơn giản:
 
-- Tầng xử lý còn gọi là business logic.
-- Tầng dữ liệu dùng để lưu trữ và truy vấn thông tin.
+```text
+Giao diện: nơi người dùng thao tác
+Xử lý: nơi xử lý yêu cầu, tính toán, kiểm tra logic
+Dữ liệu: nơi lưu trữ và truy vấn thông tin
+```
 
 ---
 
-## 4. Kiến trúc 1 tầng
+## 2. Kiến trúc 1 tầng
 
 Kiến trúc 1 tầng là toàn bộ chức năng nằm trên một máy.
 
@@ -53,7 +43,7 @@ Ví dụ: một phần mềm chạy độc lập trên máy cá nhân, dữ li�
 Ưu điểm:
 
 - Đơn giản.
-- Dễ triển khai khi chương trình nhỏ.
+- Dễ triển khai với chương trình nhỏ.
 
 Nhược điểm:
 
@@ -63,24 +53,25 @@ Nhược điểm:
 
 ---
 
-## 5. Kiến trúc 2 tầng: Client - Server
+## 3. Kiến trúc 2 tầng: Client - Server
 
 Kiến trúc 2 tầng gồm:
 
-- Client
-- Server
+```text
+Client - Server
+```
 
 Client gửi yêu cầu đến server.
 
 Server xử lý yêu cầu và trả kết quả về client.
 
-Kiến trúc này hỗ trợ nhiều máy cùng tương tác với một hệ thống.
+Kiến trúc này dùng khi nhiều máy cần tương tác với cùng một hệ thống.
 
 ### Fat Client
 
-Fat Client là kiểu client chứa nhiều logic xử lý.
+Fat Client là kiểu client làm nhiều việc.
 
-Client có thể chứa:
+Client chứa:
 
 - Code giao diện
 - Logic xử lý
@@ -90,24 +81,24 @@ Server chủ yếu làm nhiệm vụ lưu trữ dữ liệu.
 
 ### Fat Server
 
-Fat Server là kiểu server xử lý hầu hết chức năng.
+Fat Server là kiểu server làm nhiều việc.
 
 Client chủ yếu:
 
 - Hiển thị giao diện
-- Gửi yêu cầu đến server
-- Nhận kết quả từ server
+- Gửi yêu cầu
+- Nhận kết quả
 
 Server xử lý:
 
 - Tính toán
-- Nghiệp vụ
+- Logic nghiệp vụ
 - Truy vấn dữ liệu
 - Lưu trữ dữ liệu
 
 ---
 
-## 6. Kiến trúc 3 tầng
+## 4. Kiến trúc 3 tầng
 
 Kiến trúc 3 tầng gồm:
 
@@ -121,13 +112,13 @@ Trong đó:
 - Application Server: xử lý nghiệp vụ.
 - Database Server: lưu trữ dữ liệu.
 
-Đây là kiểu kiến trúc phổ biến trong các hệ thống hiện nay.
+Đây là kiểu kiến trúc phổ biến trong nhiều hệ thống hiện nay.
 
 ---
 
-## 7. Phân biệt MVC và N-tier
+## 5. Phân biệt MVC và N-tier
 
-### MVC là gì?
+### MVC
 
 MVC là mô hình tổ chức code theo 3 lớp:
 
@@ -137,9 +128,9 @@ MVC là mô hình tổ chức code theo 3 lớp:
 
 MVC nằm ở mức logic tổ chức code.
 
-Nên gọi MVC là mô hình 3 lớp, không nên gọi là 3 tầng để tránh nhầm với kiến trúc vật lý.
+Nên gọi MVC là **3 lớp**, không nên gọi là **3 tầng** để tránh nhầm với kiến trúc vật lý.
 
-### N-tier là gì?
+### N-tier
 
 N-tier là kiến trúc ở mức vật lý.
 
@@ -151,7 +142,7 @@ Ví dụ:
 - 2-tier
 - 3-tier
 
-### Điểm khác nhau
+### So sánh nhanh
 
 | Nội dung | MVC | N-tier |
 |---|---|---|
@@ -164,7 +155,7 @@ Nếu một hệ thống có cả client và server, mỗi phía vẫn có thể
 
 ---
 
-## 8. Giới thiệu Java
+## 6. Giới thiệu Java
 
 Môn học sử dụng Java để lập trình ứng dụng mạng.
 
@@ -191,7 +182,7 @@ Java thường được dùng trong:
 
 ---
 
-## 9. JVM và JDK
+## 7. JVM và JDK
 
 ### JVM
 
@@ -214,7 +205,7 @@ Một số công cụ trong JDK:
 
 ---
 
-## 10. File `.java` và `.class`
+## 8. File `.java` và `.class`
 
 File `.java` là file mã nguồn.
 
@@ -254,7 +245,7 @@ Lưu ý khi nộp bài:
 
 ---
 
-## 11. Quy tắc đặt tên trong Java
+## 9. Quy tắc đặt tên trong Java
 
 Java phân biệt chữ hoa và chữ thường.
 
@@ -282,7 +273,7 @@ SinhVien
 SanPham
 ```
 
-Ví dụ biến/phương thức:
+Ví dụ biến hoặc phương thức:
 
 ```java
 hoTen
@@ -292,7 +283,7 @@ hienThiThongTin
 
 ---
 
-## 12. Cấu trúc file Java
+## 10. Cấu trúc file Java
 
 Một file `.java` có thể có nhiều class.
 
@@ -320,11 +311,11 @@ public static void main(String[] args) {
 }
 ```
 
-Biến phải khai báo bên trong class, không khai báo lung tung ngoài class.
+Biến phải khai báo bên trong class, không khai báo ngoài class.
 
 ---
 
-## 13. Xuất dữ liệu
+## 11. Xuất dữ liệu
 
 Dùng:
 
@@ -347,7 +338,7 @@ Lưu ý:
 
 ---
 
-## 14. Nhập dữ liệu bằng `System.in.read()`
+## 12. Nhập dữ liệu bằng `System.in.read()`
 
 `System.in.read()` dùng để đọc ký tự nhập từ bàn phím.
 
@@ -376,11 +367,9 @@ System.out.println("Ky tu vua nhap: " + kyTu);
 
 Lưu ý: `System.in.read()` đọc từng ký tự nên có thể gặp ký tự thừa như Enter hoặc xuống dòng.
 
-Trong lập trình mạng, dữ liệu truyền đi cũng có thể có ký tự cuối luồng hoặc ký tự thừa, nên cần xử lý cẩn thận.
-
 ---
 
-## 15. Scanner
+## 13. Scanner
 
 Lớp `Scanner` sẽ được học kỹ hơn ở buổi sau.
 
@@ -399,7 +388,7 @@ String ten = sc.nextLine();
 
 ---
 
-## 16. Vòng lặp `while`
+## 14. Vòng lặp `while`
 
 Cú pháp:
 
@@ -425,7 +414,7 @@ while (i < 5) {
 
 ---
 
-## 17. `while` và `do-while`
+## 15. `while` và `do-while`
 
 `while` kiểm tra điều kiện trước rồi mới chạy.
 
@@ -435,7 +424,7 @@ Trong bài thực hành hôm nay, cô yêu cầu dùng `while`, không dùng `do
 
 ---
 
-## 18. Bài thực hành
+## 16. Bài thực hành
 
 Yêu cầu:
 
@@ -456,7 +445,7 @@ Cần test đủ 3 trường hợp:
 
 ---
 
-## 19. Yêu cầu chụp màn hình nộp bài
+## 17. Yêu cầu chụp màn hình nộp bài
 
 Khi nộp bài, cần chụp màn hình đầy đủ.
 
@@ -472,7 +461,7 @@ Không nên chỉ chụp một phần màn hình làm giảng viên không thấ
 
 ---
 
-## 20. Kiểm tra giữa kỳ và cuối kỳ
+## 18. Kiểm tra giữa kỳ và cuối kỳ
 
 Giữa kỳ:
 
@@ -488,7 +477,7 @@ Cuối kỳ:
 
 ---
 
-## 21. Ghi nhớ nhanh
+## 19. Ghi nhớ nhanh
 
 - MVC là 3 lớp logic, không phải 3 tầng vật lý.
 - N-tier là kiến trúc vật lý: 1 tầng, 2 tầng, 3 tầng.
