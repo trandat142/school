@@ -2,40 +2,6 @@
 
 Repo lưu tài liệu, ghi chú và source code các môn học.
 
-## Cây thư mục
-
-```text
-school
-└── phat-trien-he-thong-tich-hop
-    ├── README.md
-    ├── tai-lieu
-    │   └── slides
-    │       └── README.md
-    ├── online
-    │   ├── buoi-01
-    │   │   ├── notes.md
-    │   │   └── cau-hoi-on-tap.md
-    │   ├── buoi-02
-    │   │   ├── notes.md
-    │   │   ├── DemoNhapKyTu.java
-    │   │   ├── BaiThucHanhWhile.java
-    │   │   └── LenhBienDichVaChay.md
-    │   └── buoi-03
-    │       ├── notes.md
-    │       ├── ViDuSinhVien.java
-    │       ├── ViDuSanPham.java
-    │       ├── ViDuNhanVien.java
-    │       ├── ViDuAnimal.java
-    │       └── ViDuDaHinh.java
-    └── offline
-        ├── buoi-01
-        │   └── README.md
-        ├── buoi-02
-        │   └── README.md
-        └── buoi-03
-            └── README.md
-```
-
 ## Vào nhanh
 
 ### Phát triển hệ thống tích hợp
