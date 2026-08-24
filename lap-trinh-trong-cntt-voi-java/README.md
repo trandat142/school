@@ -10,7 +10,9 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn L
 
 ### Online
 
-Chưa có buổi online.
+- [Buổi 01](online/buoi-01)
+  - [Notes](online/buoi-01/notes.md)
+  - [Câu hỏi ôn tập](online/buoi-01/cau-hoi-on-tap.md)
 
 ### Offline
 
