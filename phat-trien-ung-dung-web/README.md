@@ -13,6 +13,12 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn P
 - [Buổi 01](online/buoi-01)
   - [Notes](online/buoi-01/notes.md)
   - [Checklist](online/buoi-01/checklist.md)
+- [Buổi 02](online/buoi-02)
+  - [Notes](online/buoi-02/notes.md)
+  - [Checklist](online/buoi-02/checklist.md)
+  - [Demo if/else](online/buoi-02/demo-if-else.php)
+  - [Demo switch](online/buoi-02/demo-switch.php)
+  - [Ví dụ PHP cơ bản](online/buoi-02/vi-du-php-co-ban.php)
 
 ### Offline
 
