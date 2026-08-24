@@ -13,6 +13,11 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn L
 - [Buổi 01](online/buoi-01)
   - [Notes](online/buoi-01/notes.md)
   - [Câu hỏi ôn tập](online/buoi-01/cau-hoi-on-tap.md)
+- [Buổi 02](online/buoi-02)
+  - [Notes](online/buoi-02/notes.md)
+  - [Câu hỏi ôn tập](online/buoi-02/cau-hoi-on-tap.md)
+  - [Bài tập pattern](online/buoi-02/BaiTapPattern.java)
+  - [Ví dụ toán tử](online/buoi-02/ViDuToanTu.java)
 
 ### Offline
 
