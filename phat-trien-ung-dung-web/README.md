@@ -10,7 +10,9 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn P
 
 ### Online
 
-Chưa có buổi online.
+- [Buổi 01](online/buoi-01)
+  - [Notes](online/buoi-01/notes.md)
+  - [Checklist](online/buoi-01/checklist.md)
 
 ### Offline
 
