@@ -21,7 +21,18 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn L
 
 ### Offline
 
-Chưa có buổi offline.
+- [Buổi 01](offline/buoi-01)
+  - [Đề bài](offline/buoi-01/de-bai.md)
+  - [Bài 01](offline/buoi-01/Bai01MaxMin3So.java)
+  - [Bài 02](offline/buoi-01/Bai02TamGiacSao.java)
+  - [Bài 03](offline/buoi-01/Bai03TamGiacNguoc.java)
+  - [Bài 04](offline/buoi-01/Bai04HinhChuNhatRong.java)
+  - [Bài 05](offline/buoi-01/Bai05HinhChuNhatCheo.java)
+  - [Bài 06](offline/buoi-01/Bai06MaxMinTrungBinh.java)
+  - [Bài 07](offline/buoi-01/Bai07SapXepDaySo.java)
+  - [Bài 08](offline/buoi-01/Bai08Fibonacci.java)
+  - [Bài 09](offline/buoi-01/Bai09ChuoiNhiPhan.java)
+  - [Bài 10](offline/buoi-01/Bai10DemTanSuat.java)
 
 ## Quy ước của môn
 
