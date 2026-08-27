@@ -2,6 +2,10 @@
 
 Thư mục lưu bài học, bài tập, tài liệu và source code của môn Phát triển ứng dụng WEB.
 
+## Buổi 03
+
+- [Google Drive buổi 03](https://drive.google.com/drive/folders/1Y8zWtO1X_2Eo1sIxtzB3j9lr7fQWd-al)
+
 ## Vào nhanh
 
 ### Tài liệu
@@ -19,7 +23,6 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn P
   - [Demo if/else](online/buoi-02/demo-if-else.php)
   - [Demo switch](online/buoi-02/demo-switch.php)
   - [Ví dụ PHP cơ bản](online/buoi-02/vi-du-php-co-ban.php)
-- [Buổi 03](https://drive.google.com/drive/folders/1Y8zWtO1X_2Eo1sIxtzB3j9lr7fQWd-al)
 
 ### Offline
 
