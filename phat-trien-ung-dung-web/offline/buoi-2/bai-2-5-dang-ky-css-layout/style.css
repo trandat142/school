@@ -1,0 +1,104 @@
+/* Khung lớn chứa toàn bộ giao diện trang web */
+.container {
+    /* Căn giữa khung theo chiều ngang */
+    margin: 0px auto;
+
+    /* Chiều cao tự động theo nội dung bên trong */
+    height: auto;
+
+    /* Chiều rộng của trang là 1000px */
+    width: 1000px;
+
+    /* Tạo đường viền màu xám cho khung */
+    border: 1px solid #999;
+}
+
+/* Phần đầu trang */
+header {
+    /* Chiều cao header */
+    height: 100px;
+
+    /* Chiều rộng bằng 100% khung cha */
+    width: 100%;
+
+    /* Màu nền xanh nhạt */
+    background: #7df791;
+
+    /* Đường viền dưới của header */
+    border-bottom: 1px solid #999;
+
+    /* Căn chữ ra giữa theo chiều ngang */
+    text-align: center;
+
+    /* Căn chữ ra giữa theo chiều dọc */
+    line-height: 100px;
+}
+
+/* Phần chính gồm menu bên trái và nội dung bên phải */
+.main {
+    /* Dùng flex để chia nav và content nằm ngang */
+    display: flex;
+
+    /* Chiều cao tối thiểu của phần chính */
+    min-height: 400px;
+}
+
+/* Menu bên trái */
+nav {
+    /* Chiếm 1 phần trong layout flex */
+    flex-grow: 1;
+
+    /* Tạo đường viền bên phải để ngăn cách với nội dung */
+    border-right: 1px solid #999;
+
+    /* Tạo khoảng cách bên trong menu */
+    padding: 10px;
+}
+
+/* Khu vực nội dung bên phải */
+.content {
+    /* Chiếm 4 phần trong layout flex, rộng hơn nav */
+    flex-grow: 4;
+
+    /* Tạo khoảng cách bên trong phần nội dung */
+    padding: 10px;
+}
+
+/* Phần chân trang */
+footer {
+    /* Chiều cao footer */
+    height: 60px;
+
+    /* Căn chữ giữa theo chiều dọc */
+    line-height: 60px;
+
+    /* Chiều rộng footer */
+    width: 1000px;
+
+    /* Màu nền xám */
+    background-color: #CCC;
+
+    /* Đường viền trên của footer */
+    border-top: 1px solid #999;
+
+    /* Căn chữ giữa theo chiều ngang */
+    text-align: center;
+}
+
+/* Định dạng nhãn trong form */
+label {
+    /* Giúp label có chiều rộng cố định để các ô input thẳng hàng */
+    display: inline-block;
+
+    /* Chiều rộng của label */
+    width: 120px;
+
+    /* Khoảng cách phía dưới label */
+    margin-bottom: 10px;
+}
+
+/* Định dạng chung cho ô nhập và danh sách chọn */
+input, select {
+    /* Tạo khoảng cách phía dưới các ô nhập */
+    margin-bottom: 10px;
+}

@@ -1,60 +1,40 @@
 # Buổi 2 - Các phương pháp truyền biến
 
-Thư mục này chứa nội dung hướng dẫn và code mẫu cho Chương 2: Các phương pháp truyền biến trong PHP.
+Nội dung buổi 2 được gom theo từng bài để người mới dễ học và dễ chạy thử.
 
-## Cách chạy
-
-1. Mở XAMPP Control Panel và Start Apache.
-2. Copy thư mục `buoi-2` vào:
+## Cấu trúc thư mục
 
 ```text
-C:\xampp\htdocs\
+buoi-2/
+├── README.md
+├── HUONG-DAN.md
+├── bai-2-1-truyen-bien-post/
+│   ├── README.md
+│   ├── truyenbien.php
+│   └── nhanbien.php
+├── bai-2-2-dang-nhap/
+│   ├── README.md
+│   └── login.php
+├── bai-2-3-tinh-toan/
+│   ├── README.md
+│   ├── clspheptinh.php
+│   └── tinhtoan.php
+├── bai-2-4-truyen-bien-link/
+│   ├── README.md
+│   ├── tacgia.php
+│   └── thongtin.php
+└── bai-2-5-dang-ky-css-layout/
+    ├── README.md
+    ├── dangky.php
+    └── style.css
 ```
 
-3. Mở trình duyệt và chạy các file theo dạng:
+## Thứ tự học đề xuất
 
-```text
-http://localhost/buoi-2/tên_file.php
-```
+1. Bài 2.1: Truyền biến qua form bằng POST
+2. Bài 2.2: Tạo trang đăng nhập
+3. Bài 2.4: Truyền biến qua đường liên kết
+4. Bài 2.3: Trang tính toán
+5. Bài 2.5: Trang đăng ký có CSS layout
 
-Ví dụ:
-
-```text
-http://localhost/buoi-2/truyenbien.php
-```
-
-## Danh sách file
-
-- `truyenbien.php`: form nhập thông tin và gửi dữ liệu bằng POST.
-- `nhanbien.php`: nhận dữ liệu từ `truyenbien.php` bằng `$_POST`.
-- `login.php`: form đăng nhập đơn giản.
-- `tacgia.php`: danh sách tác giả, truyền dữ liệu qua URL bằng GET.
-- `thongtin.php`: nhận thông tin tác giả từ URL bằng `$_GET`.
-- `clspheptinh.php`: class chứa các phép tính cộng, trừ, nhân, chia.
-- `tinhtoan.php`: form tính toán 2 số.
-- `style.css`: file CSS dùng cho trang đăng ký.
-- `dangky.php`: trang đăng ký thông tin có layout CSS.
-
-## Thứ tự nên học
-
-1. Bài 2.1: `truyenbien.php` và `nhanbien.php`
-2. Bài 2.2: `login.php`
-3. Bài 2.4: `tacgia.php` và `thongtin.php`
-4. Bài 2.3: `clspheptinh.php` và `tinhtoan.php`
-5. Bài 2.5: `style.css` và `dangky.php`
-
-## Ghi nhớ
-
-Input có `name` gì thì PHP nhận bằng đúng tên đó.
-
-Ví dụ:
-
-```php
-<input type="text" name="txtten">
-```
-
-PHP nhận bằng:
-
-```php
-$_POST["txtten"]
-```
+> Xem file `HUONG-DAN.md` để đọc hướng dẫn tổng quát trước khi làm từng bài.
