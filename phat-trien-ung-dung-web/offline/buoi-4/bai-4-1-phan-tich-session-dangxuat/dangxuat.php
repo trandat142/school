@@ -1,16 +1,13 @@
 <?php
-// Bắt buộc gọi session_start() trước khi can thiệp vào session
 session_start();
+error_reporting(0);
 
-// Xóa biến session 'ThongTin' và hủy phiên
+// Xử lý hủy session và chuyển hướng về session.php
 if (isset($_SESSION["ThongTin"])) {
     unset($_SESSION["ThongTin"]);
 }
-
-// Xóa sạch toàn bộ dữ liệu session
 session_destroy();
 
-// Điều hướng trang PHP chuẩn: Phải gọi header() TRƯỚC mọi output HTML
-header("Location: session.php");
+header("Location:session.php");
 exit();
 ?>

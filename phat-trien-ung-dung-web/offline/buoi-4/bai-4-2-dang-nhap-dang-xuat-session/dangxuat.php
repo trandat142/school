@@ -2,14 +2,10 @@
 session_start();
 
 // d) Xóa session đăng nhập
-if (isset($_SESSION['user'])) {
-    unset($_SESSION['user']);
-}
-
-// Xóa toàn bộ session
+unset($_SESSION["user"]);
 session_destroy();
 
-// Điều hướng về trang chủ
-header("Location: trangchu.php");
+// Chuyển về trang chủ
+header("location:trangchu.php");
 exit();
 ?>

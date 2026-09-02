@@ -1,96 +1,131 @@
-# Hướng dẫn chi tiết Buổi 4 - Quản lý Trạng thái với Session và Cookie trong PHP
+# Hướng dẫn chi tiết Buổi 4 - Session và Cookie trong PHP
 
-## 1. Chuẩn bị môi trường
-- Đảm bảo máy chủ Apache trên XAMPP / Laragon đang chạy (`Start` Apache).
-- Copy thư mục `buoi-4` vào thư mục gốc của Web Server:
-  - Trên Windows XAMPP: `C:\xampp\htdocs\buoi-4\`
-  - Trên macOS XAMPP: `/Applications/XAMPP/xamppfiles/htdocs/buoi-4/`
-  - Hoặc chạy trực tiếp với PHP Built-in Server:
-    ```bash
-    cd phat-trien-ung-dung-web/offline/buoi-4
-    php -S localhost:8000
-    ```
+Tài liệu hướng dẫn bám sát 100% nội dung Slide bài giảng của giảng viên.
 
-## 2. Tóm tắt lý thuyết cốt lõi
+---
 
-### 2.1. So sánh Session và Cookie
+## 4.1. Mục tiêu
+
+- So sánh được cách thức hoạt động giữa biến session và cookie;
+- Vận dụng biến session, cookie thực hiện một số bài tập theo yêu cầu.
+
+---
+
+## 4.2. Tóm tắt nội dung lý thuyết
+
+### 4.2.1. Giống nhau
+
+- Được dùng để lưu trữ thông tin (giá trị, trạng thái,...);
+- Phạm vi tác động trên toàn website.
+
+### 4.2.2. Khác nhau
 
 | Tiêu chí | Session | Cookie |
 | :--- | :--- | :--- |
-| **Vị trí lưu trữ** | Phía máy chủ (Server). Phía Client chỉ giữ mã định danh session (`PHPSESSID`). | Phía trình duyệt người dùng (Client). |
-| **Thời gian tồn tại** | Mặc định kết thúc khi người dùng đóng trình duyệt hoặc gọi hàm `session_destroy()`. | Được ấn định thời gian sống cụ thể thông qua tham số `expire` (ví dụ: `time() + 86400*10`). |
-| **Dung lượng lưu trữ** | Không giới hạn cứng, phụ thuộc vào bộ nhớ máy chủ. | Bị giới hạn tiêu chuẩn tối đa khoảng **4KB** cho mỗi cookie. |
-| **Mức độ an toàn** | Rất an toàn do dữ liệu nhạy cảm được xử lý và lưu ở Server. | Kém an toàn hơn vì người dùng có thể xem hoặc chỉnh sửa trực tiếp trên trình duyệt. |
-| **Mục đích chính** | Lưu thông tin đăng nhập, giỏ hàng, quyền hạn tài khoản. | Ghi nhớ tùy chọn giao diện, checkbox "Ghi nhớ mật khẩu", tracking, theme. |
+| **Nơi lưu trữ** | Được khởi tạo và lưu trữ ở phía server. | Được khởi tạo và lưu trữ ở phía client. |
+| **Thời gian sống** | Người dùng không thể quy định được thời gian tồn tại. | Có thể quy định được thời gian tồn tại. |
+| **Giới hạn dung lượng**| Không quy định về giới hạn kích thước. | Theo tiêu chuẩn quy định không quá 4KB. |
+| **Bảo mật** | An toàn và bảo mật hơn vì dữ liệu được lưu trữ dạng mã hóa và được giải mã phía server. | Dữ liệu được lưu trữ phía client của trình duyệt và không được mã hóa. |
+| **Tính độc lập** | Session hoạt động độc lập cho mọi client. | Cookie có thể hoặc không thể độc lập trên mọi client (nếu client không cho phép). |
 
 ---
 
-### 2.2. Các hàm và cú pháp quan trọng
+## 4.3. Hướng dẫn chi tiết và gợi ý cách làm từng bài
 
-#### Thao tác với Session:
-- `session_start();`: Bắt buộc gọi ở **dòng đầu tiên** của file PHP trước khi có bất kỳ dòng HTML hoặc khoảng trắng nào được xuất ra trình duyệt.
-- `$_SESSION['key'] = $value;`: Gán giá trị vào biến session.
-- `unset($_SESSION['key']);`: Xóa một biến session cụ thể.
-- `session_destroy();`: Hủy toàn bộ phiên làm việc của session hiện tại.
+### 📌 Bài 4.1: Cho hai trang PHP như hình, hãy trả lời các câu hỏi
 
-#### Thao tác với Cookie:
-- `setcookie($name, $value, $expire, $path);`: Tạo hoặc cập nhật cookie.
-  - Ví dụ tồn tại trong 10 ngày: `setcookie("bgcolor", "bg_green", time() + 86400 * 10, "/");`
-  - Ví dụ xóa cookie: `setcookie("bgcolor", "", time() - 3600, "/");`
-- `$_COOKIE['name']`: Đọc giá trị cookie gửi từ client lên.
+#### Đề bài mã nguồn gốc:
+- `session.php`: Gán giá trị biến session qua form submit.
+- `dangxuat.php`: Kiểm tra session và chuyển hướng.
 
-#### Hàm điều hướng trang:
-- `header("Location: trangchu.php"); exit();`: Điều hướng ngay lập tức sang trang khác.
-- `header("refresh: 5; url=trangchu.php");`: Điều hướng sau 5 giây.
+#### Trả lời các câu hỏi:
 
----
+**a) Hãy cho biết về cú pháp trong PHP, hai trang trên bị lỗi hoặc chưa chính xác ở điểm nào? Nếu có thì mô tả cụ thể?**
+1. **Thiếu `session_start()` ở `dangxuat.php`**: Muốn sử dụng biến `$_SESSION` thì trang bắt buộc phải khởi tạo session bằng hàm `session_start()` ở đầu file.
+2. **Lỗi `Headers already sent` ở `dangxuat.php`**: Thẻ HTML `<html><head>...` xuất trước hàm `header("Location:session.php")`. Trong PHP, hàm `header()` phải được gọi trước mọi thẻ HTML hoặc khoảng trắng output.
+3. **Kiểm tra `if($_SESSION["ThongTin"])` chưa chặt chẽ**: Khi biến chưa được gán, PHP sẽ quăng cảnh báo Notice nếu không dùng `error_reporting(0)`. Cách viết chuẩn là `isset($_SESSION["ThongTin"])`.
+4. **Sai tên file điều hướng link**: Trang `session.php` ghi `<a href='logout.php'>` nhưng file xử lý đăng xuất lại tên là `dangxuat.php`.
 
-## 3. Phân tích và hướng dẫn chi tiết từng bài tập
+**b) Hãy mô tả kết quả khi thực thi hai trang trên?**
+- `session.php`: Khi nhập dữ liệu và nhấn "Gán", dữ liệu lưu vào `$_SESSION["ThongTin"]` và in ra `Giá trị biến session là: ... <a href='logout.php'>Đăng xuất</a>`. Khi chưa gán, in ra `Giá trị biến session chưa được gán`.
+- `dangxuat.php`: Do thiếu `session_start()`, trang không nhận diện được `$_SESSION["ThongTin"]` nên chạy vào nhánh `else` gọi `header()`. Tuy nhiên do xuất HTML trước nên có thể bị lỗi không chuyển hướng được và chưa thực hiện xóa session.
 
-### 📝 Bài 4.1: Phân tích & hoàn thiện chức năng Session
-
-#### a) Điểm lỗi cú pháp & chưa chính xác trong mã nguồn đề bài:
-1. **Thiếu `session_start()` ở `dangxuat.php`**: Không thể đọc hay hủy mảng `$_SESSION` nếu chưa khởi tạo session.
-2. **Kiểm tra `if($_SESSION["ThongTin"])` chưa an toàn**: Khi biến chưa được gán, PHP sẽ quăng cảnh báo `Notice: Undefined index / Undefined array key`. Cần dùng `if(isset($_SESSION["ThongTin"]) && $_SESSION["ThongTin"] != "")`.
-3. **Lỗi `Headers already sent` trong `dangxuat.php`**: Thẻ HTML `<html><head>...` xuất hiện trước khi gọi hàm `header("Location: session.php")`. Theo nguyên lý HTTP, header phải được gửi trước payload HTML.
-4. **Sai tên file trong liên kết**: `session.php` ghi `<a href='logout.php'>` trong khi file xử lý là `dangxuat.php`.
-
-#### b) Mô tả kết quả thực thi:
-- **`session.php`**: Người dùng nhập text và nhấn "Gán" -> Dữ liệu lưu vào session và hiển thị: `Giá trị biến session là: ... Đăng xuất`. Nếu chưa nhập và bấm gán, báo: `Giá trị biến session chưa được gán`.
-- **`dangxuat.php`**: Bị lỗi do thiếu `session_start()` và thẻ HTML xuất trước lệnh `header()`, session không được xóa thành công hoặc bị kẹt thông báo lỗi Warning.
-
-#### c) Hướng hoàn thiện:
-- Bổ sung trang `ketqua.php` hiển thị bài phân tích rõ ràng dạng bảng.
-- Viết lại chuẩn `session.php` và `dangxuat.php` (sử dụng `session_unset()`, `session_destroy()`, `header()` trước output).
+**c) Để hoàn thiện chức năng đăng xuất (xóa session) ta cần thực hiện như thế nào?**
+- Thêm `session_start()` ở đầu trang.
+- Xóa biến session bằng `unset($_SESSION["ThongTin"])` hoặc hủy toàn bộ phiên bằng `session_destroy()`.
+- Gọi hàm `header("Location:session.php")` trước mọi mã HTML.
 
 ---
 
-### 📝 Bài 4.2: Đăng ký - Đăng nhập - Đăng xuất & Điều hướng trạng thái
+### 📌 Bài 4.2: Sử dụng form đăng ký và đăng nhập ở chương 2
 
-Hệ thống gồm 4 trang liên kết chặt chẽ:
-1. **`dangky.php`**: Nhận thông tin người dùng. Khi đăng ký thành công, lưu thông tin vào `$_SESSION['registered_user']` và chuyển hướng sang `dangnhap.php`.
-2. **`dangnhap.php`**: 
-   - Kiểm tra nếu `isset($_SESSION['user'])` (đã đăng nhập) thì chuyển hướng ngay về `trangchu.php`.
-   - Nếu đăng nhập đúng thông tin, lưu thông tin vào `$_SESSION['user']` và chuyển hướng về `trangchu.php`.
-   - Hỗ trợ checkbox "Nhớ thông tin đăng nhập" bằng Cookie `saved_email`.
-3. **`trangchu.php`**: 
-   - Header hiển thị menu động:
-     - Chưa đăng nhập: Hiện `Trang chủ`, `Đăng ký`, `Đăng nhập`.
-     - Đã đăng nhập: Hiện `Trang chủ`, `Đăng xuất` (ẩn Đăng ký và Đăng nhập).
-4. **`dangxuat.php`**: Hủy `$_SESSION['user']`, gọi `session_destroy()` và chuyển về `trangchu.php`.
+#### Các yêu cầu xử lý:
+- **a)** Khi người dùng vào menu "Đăng nhập" nếu đã đăng nhập thì hệ thống điều hướng về trang chủ:
+  ```php
+  if (isset($_SESSION["user"])) {
+      header("location:trangchu.php");
+      exit();
+  }
+  ```
+- **b)** Khi người dùng đăng ký thành công thì điều hướng về trang đăng nhập để đăng nhập với thông tin vừa đăng ký:
+  ```php
+  header("location:dangnhap.php");
+  exit();
+  ```
+- **c)** Khi người dùng đăng nhập thành công thì xuất hiện thêm menu "Đăng xuất" và mất đi menu "Đăng nhập":
+  ```php
+  <?php if (!isset($_SESSION["user"])) { ?>
+      <li><a href="dangnhap.php">Đăng nhập</a></li>
+  <?php } else { ?>
+      <li><a href="dangxuat.php">Đăng xuất</a></li>
+  <?php } ?>
+  ```
+- **d)** Khi vào menu "Đăng xuất" hệ thống sẽ thực hiện đăng xuất (xóa session) và chuyển về trang chủ:
+  ```php
+  session_start();
+  session_destroy();
+  header("location:trangchu.php");
+  exit();
+  ```
 
 ---
 
-### 📝 Bài 4.3: Cá nhân hóa giao diện (Màu Header) duy trì 10 ngày bằng Cookie
+### 📌 Bài 4.3: Lưu sở thích đổi màu header website bằng Cookie (10 ngày)
 
-1. **Khởi tạo class CSS**:
-   - `header.bg_green { background-color: #2e7d32 !important; color: #fff; }`
-   - `header.bg_red { background-color: #c62828 !important; color: #fff; }`
-2. **Form Đăng ký**:
-   - Gán `value="bg_green"` cho Màu xanh và `value="bg_red"` cho Màu đỏ.
-   - Khi đăng ký, dùng `setcookie("remember", "dkemail=...&dksothich=...", time() + 86400 * 100, "/");`.
-3. **Form Đăng nhập**:
-   - Đọc `$_COOKIE["remember"]`, dùng hàm `parse_str()` trích xuất `dksothich`.
-   - Lưu cookie màu giao diện: `setcookie("bgcolor", $result["dksothich"], time() + 86400 * 10, "/");` (tồn tại 10 ngày).
-4. **Áp dụng giao diện**:
-   - Tại `<header class="<?php echo $_COOKIE['bgcolor'] ?? ''; ?>">`, header sẽ tự động đổi màu xanh hoặc đỏ và giữ nguyên 10 ngày dù người dùng tắt mở lại trình duyệt.
+Bám sát 4 bước gợi ý trong slide:
+
+- **Bước 1:** Tạo 2 class css trong `style.css`:
+  ```css
+  header.bg_green { background: green !important; }
+  header.bg_red { background: red !important; }
+  ```
+
+- **Bước 2:** Đặt lại value của checkbox sở thích tương ứng 2 class css:
+  ```html
+  Màu xanh <input type="checkbox" name="sothich" value="bg_green" />
+  Màu đỏ <input type="checkbox" name="sothich" value="bg_red" />
+  ```
+
+- **Bước 3:** Sử dụng cookie để ghi nhớ sở thích người dùng đã đăng ký và đăng nhập:
+  - *Tại dangky.php:*
+    ```php
+    if (isset($_POST['sbdangky'])) {
+        setcookie("remember", "dkemail=" . $_POST['email'] . "&dksothich=" . $_POST['sothich'], time() + 3600 * 24 * 100, "/");
+    }
+    ```
+  - *Tại dangnhap.php:*
+    ```php
+    if (isset($_POST['sbdangnhap'])) {
+        if ($_COOKIE["remember"]) {
+            parse_str($_COOKIE["remember"], $result);
+            if ($_POST["email"] == $result["dkemail"]) {
+                setcookie("bgcolor", $result["dksothich"], time() + 3600 * 24 * 10, "/");
+            }
+        }
+    }
+    ```
+
+- **Bước 4:** Tại phần html của thẻ header khai báo thêm class:
+  ```html
+  <header class="<?=$_COOKIE['bgcolor']?>" />
+  ```

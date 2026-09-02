@@ -1,53 +1,37 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    padding: 20px;
-}
-
+/* Khung lớn chứa toàn bộ giao diện trang web */
 .container {
-    max-width: 850px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 0px auto;
+    height: auto;
+    width: 1000px;
+    border: 1px solid #999;
 }
 
+/* Phần đầu trang */
 header {
-    background-color: #1e88e5;
-    color: #fff;
-    padding: 20px;
+    height: 100px;
+    width: 100%;
+    background: #7df791;
+    border-bottom: 1px solid #999;
     text-align: center;
+    line-height: 100px;
 }
 
+/* Phần chính gồm menu bên trái và nội dung bên phải */
 .main {
     display: flex;
     min-height: 400px;
 }
 
+/* Menu bên trái */
 nav {
-    width: 220px;
-    background-color: #eef2f5;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-}
-
-nav h3 {
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #555;
-    text-transform: uppercase;
+    flex-grow: 1;
+    border-right: 1px solid #999;
+    padding: 10px;
 }
 
 nav ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 nav ul li {
@@ -55,98 +39,37 @@ nav ul li {
 }
 
 nav ul li a {
-    display: block;
-    padding: 10px;
-    background: #fff;
-    color: #333;
     text-decoration: none;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-weight: bold;
-    transition: 0.2s;
+    color: #000;
 }
 
 nav ul li a:hover {
-    background: #1e88e5;
-    color: #fff;
+    color: blue;
 }
 
+/* Khu vực nội dung bên phải */
 .content {
-    flex: 1;
-    padding: 25px;
+    flex-grow: 4;
+    padding: 10px;
 }
 
-.content h2 {
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-.form-group {
-    margin-bottom: 12px;
-}
-
-.form-group label {
-    display: inline-block;
-    width: 140px;
-    font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"],
-.form-group input[type="tel"],
-.form-group select {
-    width: 280px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-actions {
-    margin-top: 15px;
-    padding-left: 140px;
-}
-
-.btn {
-    padding: 8px 18px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.btn-primary {
-    background: #1e88e5;
-    color: white;
-}
-
-.btn-secondary {
-    background: #757575;
-    color: white;
-}
-
-.alert {
-    padding: 10px 15px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-}
-
-.alert-danger {
-    background-color: #ffebee;
-    color: #c62828;
-    border: 1px solid #ef9a9a;
-}
-
-.alert-success {
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    border: 1px solid #a5d6a7;
-}
-
+/* Phần chân trang */
 footer {
-    background-color: #37474f;
-    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    width: 1000px;
+    background-color: #CCC;
+    border-top: 1px solid #999;
     text-align: center;
-    padding: 12px;
-    font-size: 14px;
+}
+
+/* Định dạng nhãn trong form */
+label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+input, select {
+    margin-bottom: 10px;
 }
