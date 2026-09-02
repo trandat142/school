@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header {
+    background-color: #1e88e5;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    min-height: 400px;
+}
+
+nav {
+    width: 220px;
+    background-color: #eef2f5;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+nav h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+nav ul li a:hover {
+    background: #1e88e5;
+    color: #fff;
+}
+
+.content {
+    flex: 1;
+    padding: 25px;
+}
+
+.content h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 140px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 280px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-actions {
+    margin-top: 15px;
+    padding-left: 140px;
+}
+
+.btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #1e88e5;
+    color: white;
+}
+
+.btn-secondary {
+    background: #757575;
+    color: white;
+}
+
+.alert {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+footer {
+    background-color: #37474f;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+}

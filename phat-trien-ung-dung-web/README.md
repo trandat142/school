@@ -26,7 +26,9 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn P
 
 ### Offline
 
-Chưa có buổi offline.
+- [Buổi 02 - Các phương pháp truyền biến](offline/buoi-2)
+- [Buổi 03 - Kỹ thuật Upload File](offline/buoi-3)
+- [Buổi 04 - Quản lý Trạng thái Session & Cookie](offline/buoi-4)
 
 ## Quy ước của môn
 
