@@ -61,3 +61,25 @@ javac -encoding UTF-8 <FileName>.java
 # Run compiled class
 java <FileName>
 ```
+
+---
+
+## Slide & Visual Design Workflow (Pencil MCP)
+
+When creating or editing visual slides, infographics, and lecture diagrams:
+
+### Architecture & Tools
+- **Design Canvas (`*.pen`)**: Managed exclusively via Pencil MCP tools (`mcp__pencil__execute`, `mcp__pencil__get_app_state`, etc.). Never read or edit `.pen` files directly with text tools.
+- **Exported Visual Assets (`assets/design/` or lesson `tai-lieu/slides/`)**: WebP/PNG exports generated from the canvas.
+- **Standard Artboard Dimensions**: `1200 x 675 px` (16:9 ratio, exported at 2x scale).
+
+### Design Tokens & Styling Conventions
+- **Base Canvas**: Pumice (`#e2e2df`)
+- **Card/Surface**: Limestone (`#f7f6f2`)
+- **Primary Text & Borders**: Obsidian (`#070607`)
+- **Primary Accent**: Ember (`#fc5000`)
+- **Secondary Accent**: Plasma Violet (`#524ae9`)
+- **Tag/Highlight**: Sulfur (`#f5f28e`)
+- **Typography**: Momo Trust Sans (Display headings & body text)
+- **Iconography**: Lucide Icons / Phosphor Icons (clean vector SVG paths)
+
