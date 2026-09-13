@@ -37,6 +37,7 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn P
   - [mang.php](online/buoi-04/mang.php)
   - [clsontap.php](online/buoi-04/classontap/clsontap.php)
 - [Buổi 05](online/buoi-05)
+  - [Hướng dẫn học tập (README)](online/buoi-05/README.md)
   - [sinhvien.php](online/buoi-05/sinhvien.php)
   - [clscsdl.php](online/buoi-05/myclass/clscsdl.php)
   - [clsmang.php](online/buoi-05/myclass/clsmang.php)
