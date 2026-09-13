@@ -18,7 +18,7 @@ class csdl
             exit(); // Dừng toàn bộ chương trình ngay lập tức, không chạy tiếp bên dưới
         } else {
             // mysql_select_db(tên_csdl, biến_kết_nối): chọn database cần làm việc
-            mysql_select_db("csdl_sinhvien", $con);
+            mysql_select_db("dhcntt21avl_db", $con);
 
             // mysql_query("SET NAMES UTF8"): thiết lập bảng mã tiếng Việt có dấu chuẩn UTF-8
             mysql_query("SET NAMES UTF8");
