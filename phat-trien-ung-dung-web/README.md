@@ -23,6 +23,23 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn P
   - [Demo if/else](online/buoi-02/demo-if-else.php)
   - [Demo switch](online/buoi-02/demo-switch.php)
   - [Ví dụ PHP cơ bản](online/buoi-02/vi-du-php-co-ban.php)
+- [Buổi 03](online/buoi-03)
+  - [Notes](online/buoi-03/notes.md)
+  - [Checklist](online/buoi-03/checklist.md)
+  - [Demo vòng lặp](online/buoi-03/demo-vong-lap.php)
+  - [Demo mảng](online/buoi-03/demo-mang.php)
+  - [Demo upload file](online/buoi-03/demo-upload-file.php)
+- [Buổi 04](online/buoi-04)
+  - [index.php](online/buoi-04/index.php)
+  - [admin.php](online/buoi-04/admin.php)
+  - [if.php](online/buoi-04/if.php)
+  - [switch.php](online/buoi-04/switch.php)
+  - [mang.php](online/buoi-04/mang.php)
+  - [clsontap.php](online/buoi-04/classontap/clsontap.php)
+- [Buổi 05](online/buoi-05)
+  - [sinhvien.php](online/buoi-05/sinhvien.php)
+  - [clscsdl.php](online/buoi-05/myclass/clscsdl.php)
+  - [clsmang.php](online/buoi-05/myclass/clsmang.php)
 
 ### Offline
 
