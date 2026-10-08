@@ -15,27 +15,31 @@
     <input type="password" name="password" id="password">
   </p>
   <p>Nhap lai mat khau
-    <input type="password" name="password2" id="password2">
+    <input type="password" name="repassword" id="password2">
   </p>
   <p>
     <label for="textfield">Ho va ten</label>
-    <input type="text" name="textfield" id="textfield">
+    <input type="text" name="hovaten" id="textfield">
   </p>
   <p>
-    <label for="tel">SDT</label>
-    <input type="tel" name="tel" id="tel">
+    <label for="tel">Dien thoai</label>
+    <input type="tel" name="dienthoai" id="tel">
   </p>
   <p>Que quan
-    <select name="select" id="select">
+    <select name="quequan" id="select">
       <option value="Hà Nội">Hà Nội</option>
       <option value="Hồ Chí Minh">Hồ Chí Minh</option>
     </select>
   </p>
-  <p>Gioi tinh: 
-    <input type="radio" name="radio" id="radio" value="radio">
-    <label for="radio">Radio Button </label>
-    <input type="radio" name="radio2" id="radio2" value="radio2">
-    <label for="radio2">Radio Button </label>
+  <p>Gioi tinh:  
+    <label>
+      <input type="radio" name="gioitinh" value="Nam" id="RadioGroup1_0">
+      Nam</label>
+    <br>
+    <label>
+      <input type="radio" name="gioitinh" value="Nữ" id="RadioGroup1_1">
+      Nữ</label>
+    <br>
   </p>
   <p>So thich:
     
@@ -47,7 +51,7 @@
 Âm nhạc    </p>
   <p>Anh dai dien: 
     <label for="fileField">File:</label>
-    <input name="fileField" type="file" required id="fileField">
+    <input name="anhdaidien" type="file" required id="fileField">
   </p>
   <p>
     <input type="submit" name="sbdangky" id="sbdangky" value="Đăng ký">
