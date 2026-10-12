@@ -10,6 +10,7 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn L
 
 ### Online
 
+- [Buổi 08: Quản lý khách hàng bằng BST](online/buoi-08)
 - [Buổi 01](online/buoi-01)
   - [Notes](online/buoi-01/notes.md)
   - [Câu hỏi ôn tập](online/buoi-01/cau-hoi-on-tap.md)

@@ -41,6 +41,12 @@ Thư mục lưu bài học, bài tập, tài liệu và source code của môn P
   - [sinhvien.php](online/buoi-05/sinhvien.php)
   - [clscsdl.php](online/buoi-05/myclass/clscsdl.php)
   - [clsmang.php](online/buoi-05/myclass/clsmang.php)
+- [Buổi 06](online/buoi-06)
+  - [themxoasuasv.php](online/buoi-06/themxoasuasv.php)
+- [Buổi 07 - Thêm và sửa sinh viên](online/buoi-07)
+  - [Hướng dẫn học tập (README)](online/buoi-07/README.md)
+  - [Quản lý sinh viên](online/buoi-07/themxoasuasv.php)
+  - [Lớp CSDL](online/buoi-07/myclass/clscsdl.php)
 
 ### Offline
 
